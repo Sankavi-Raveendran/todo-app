@@ -10,7 +10,7 @@ export const createTask = async (req, res) => {
 export const getRecentTasks = async (req, res) => {
   const tasks = await Task.findAll({
     where: { completed: false },
-    order: [["createdAt", "DESC"]],
+    order: [["createdAt", "ASC"]],
     limit: 5
   });
   res.json(tasks);
